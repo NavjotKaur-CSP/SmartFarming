@@ -32,7 +32,17 @@ const CropHealthPage = () => {
     const fetchCrops = async () => {
       try {
         const response = await getCrops();
-        setCrops(Array.isArray(response.data) ? response.data : []); = async () => {
+        setCrops(Array.isArray(response.data) ? response.data : []);
+      } catch (error) {
+        console.error('Failed to fetch crops:', error);
+      } finally {
+        setCropsLoading(false);
+      }
+    };
+    fetchCrops();
+  }, []);
+
+  const handleAnalyze = async () => {
     if (!selectedCrop) return;
     
     setLoading(true);
