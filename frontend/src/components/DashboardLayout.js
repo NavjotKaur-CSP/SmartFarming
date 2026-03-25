@@ -40,7 +40,8 @@ const DashboardLayout = ({ children }) => {
     const fetchAlerts = async () => {
       try {
         const response = await getAlerts();
-        const unread = response.data.filter(a => !a.is_read).length;
+        const alerts = Array.isArray(response.data) ? response.data : [];
+        const unread = alerts.filter(a => !a.is_read).length;
         setUnreadAlerts(unread);
       } catch (error) {
         console.error('Failed to fetch alerts:', error);
