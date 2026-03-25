@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #FDFBF7;
+    color: #1C1917;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Work Sans', sans-serif;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+    :root {
+        --background: 40 33% 98%;
+        --foreground: 24 10% 10%;
+        --card: 0 0% 100%;
+        --card-foreground: 24 10% 10%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 24 10% 10%;
+        --primary: 130 28% 25%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 25 70% 53%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 30 20% 96%;
+        --muted-foreground: 24 5% 45%;
+        --accent: 30 20% 96%;
+        --accent-foreground: 24 10% 10%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 30 6% 90%;
+        --input: 30 6% 90%;
+        --ring: 130 28% 25%;
+        --chart-1: 130 28% 25%;
+        --chart-2: 25 70% 53%;
+        --chart-3: 199 89% 48%;
+        --chart-4: 142 71% 45%;
+        --radius: 0.5rem;
+        --success: 142 71% 45%;
+        --warning: 38 92% 50%;
+        --danger: 0 84% 60%;
+        --info: 199 89% 48%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FDFBF7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D6D3D1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A8A29E;
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.animation-delay-100 {
+    animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+    animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+    animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+    animation-delay: 400ms;
+}
+
+/* Custom card hover effect */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(47, 82, 51, 0.1);
+    border-color: rgba(47, 82, 51, 0.3);
+}
+
+/* Glassmorphism header */
+.glass-header {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}

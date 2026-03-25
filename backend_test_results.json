@@ -1,0 +1,131 @@
+{
+  "summary": {
+    "total_tests": 20,
+    "passed": 20,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "results": [
+    {
+      "test": "Health Check",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:42:58.813002"
+    },
+    {
+      "test": "Admin Login",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:42:59.164545"
+    },
+    {
+      "test": "Get Current User",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:42:59.266097"
+    },
+    {
+      "test": "Dashboard Stats",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:42:59.408136"
+    },
+    {
+      "test": "Weather Data",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:42:59.543458"
+    },
+    {
+      "test": "Soil Data",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:42:59.659881"
+    },
+    {
+      "test": "Market Prices",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:42:59.791966"
+    },
+    {
+      "test": "Create Crop",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:42:59.901323"
+    },
+    {
+      "test": "Get Crops",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:00.003120"
+    },
+    {
+      "test": "Get Specific Crop",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:00.104908"
+    },
+    {
+      "test": "Update Crop",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:00.230447"
+    },
+    {
+      "test": "Delete Crop",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:00.358568"
+    },
+    {
+      "test": "Get Alerts",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:00.468582"
+    },
+    {
+      "test": "Update Profile",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:00.582035"
+    },
+    {
+      "test": "Create Crop for AI",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:00.701509"
+    },
+    {
+      "test": "AI Yield Prediction",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:14.425584"
+    },
+    {
+      "test": "AI Crop Health Analysis",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:38.537773"
+    },
+    {
+      "test": "Delete AI Test Crop",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:38.669255"
+    },
+    {
+      "test": "User Registration",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:39.008754"
+    },
+    {
+      "test": "Logout",
+      "success": true,
+      "details": "Status: 200",
+      "timestamp": "2026-03-25T17:43:39.133140"
+    }
+  ],
+  "timestamp": "2026-03-25T17:43:39.134011"
+}

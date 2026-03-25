@@ -1,0 +1,100 @@
+{
+  "project_name": "Smart Farming Platform",
+  "theme": "light",
+  "archetype": "1_organic_earthy",
+  "global_styles": {
+    "background_color": "bg-[#FDFBF7]",
+    "text_color": "text-[#1C1917]",
+    "font_family": {
+      "headings": "'Work Sans', sans-serif",
+      "body": "'IBM Plex Sans', sans-serif"
+    }
+  },
+  "color_palette": {
+    "background": "#FDFBF7",
+    "foreground": "#1C1917",
+    "primary": "#2F5233",
+    "primary_hover": "#243E26",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#D97736",
+    "secondary_foreground": "#FFFFFF",
+    "surface": "#FFFFFF",
+    "surface_hover": "#FAFAFA",
+    "border": "#E7E5E4",
+    "success": "#22C55E",
+    "warning": "#F59E0B",
+    "danger": "#EF4444",
+    "info": "#0EA5E9"
+  },
+  "typography": {
+    "h1": "text-3xl sm:text-4xl font-semibold tracking-tight text-[#1C1917]",
+    "h2": "text-2xl sm:text-3xl font-semibold tracking-tight text-[#1C1917]",
+    "h3": "text-xl sm:text-2xl font-medium tracking-tight text-[#1C1917]",
+    "h4": "text-lg sm:text-xl font-medium text-[#1C1917]",
+    "body": "text-base leading-relaxed text-[#44403C]",
+    "small": "text-sm text-[#78716C]",
+    "overline": "text-xs font-bold uppercase tracking-[0.2em] text-[#78716C]"
+  },
+  "spacing_and_layout": {
+    "page_padding": "p-4 sm:p-6 lg:p-8",
+    "container_padding": "p-6",
+    "grid_dashboard": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "radius": "rounded-lg"
+  },
+  "components": {
+    "card": {
+      "base": "bg-white border border-[#E7E5E4] rounded-lg p-6 shadow-sm",
+      "hover": "hover:-translate-y-1 hover:shadow-md hover:border-[#2F5233]/30 transition-all duration-300",
+      "notes": "Use for all dashboard widgets. No heavy drop shadows. Keep it flat, structured, and functional."
+    },
+    "button": {
+      "primary": "bg-[#2F5233] text-white hover:bg-[#243E26] rounded-md px-4 py-2 font-medium transition-colors",
+      "secondary": "bg-white text-[#2F5233] border border-[#2F5233] hover:bg-[#FDFBF7] rounded-md px-4 py-2 font-medium transition-colors"
+    },
+    "header": {
+      "base": "bg-white/70 backdrop-blur-xl border-b border-[#E7E5E4] sticky top-0 z-50",
+      "notes": "Use glassmorphism for header if content scrolls under, otherwise use solid bg-white."
+    },
+    "sidebar": {
+      "base": "bg-[#FDFBF7] border-r border-[#E7E5E4] h-full"
+    }
+  },
+  "image_urls": [
+    {
+      "category": "user_profile",
+      "url": "https://images.pexels.com/photos/2519332/pexels-photo-2519332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Indian farmer holding tools. Use as the avatar or profile picture in the User Management and Header sections."
+    },
+    {
+      "category": "crop_imagery",
+      "url": "https://images.unsplash.com/photo-1601368763621-a4ce4d7ab4e0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxhZXJpYWwlMjB2aWV3JTIwZmFybSUyMGZpZWxkfGVufDB8fHx8MTc3NDQ1OTc3MXww&ixlib=rb-4.1.0&q=85",
+      "description": "Aerial view of a green grass field. Use in the Crop Health Monitoring panel or as a side panel image for the Auth (Login/Signup) page."
+    }
+  ],
+  "icons": {
+    "library": "lucide-react",
+    "usage": "Use Lucide React for all dashboard icons (e.g., Leaf, CloudRain, Activity, TrendingUp, AlertTriangle, User)."
+  },
+  "charts": {
+    "library": "recharts",
+    "colors": ["#2F5233", "#D97736", "#0EA5E9", "#22C55E"],
+    "notes": "Use for Yield Prediction View and Farm Analytics Charts. Tooltips must be styled to match card surfaces."
+  },
+  "animations": {
+    "page_load": "Framer Motion `staggerChildren` on dashboard cards with a gentle y-axis slide in (e.g., y: 20 -> 0) and fade in.",
+    "interactions": "Hover scaling on buttons and slight upward lift (-translate-y-1) on interactive cards."
+  },
+  "testing": {
+    "rules": "All interactive elements MUST have `data-testid` attributes (e.g., data-testid='yield-chart', data-testid='login-submit')."
+  },
+  "instructions_to_main_agent": [
+    "Build a Control Room style dashboard with a sidebar navigation.",
+    "Implement an Auth page (Login/Signup) utilizing a split layout where one side uses the `crop_imagery` as a background cover and the other side contains the auth form.",
+    "The dashboard layout MUST follow a mobile-first responsive design, stacking grid items on mobile.",
+    "Do NOT use pure #000000 or #808080. Follow the provided color palette exactly.",
+    "Implement the 'Market Prices Table' using the Shadcn Table component.",
+    "Use Lucide React icons for the 'Weather Forecast Widget' and other navigational elements.",
+    "Integrate Recharts for the 'Yield Prediction' and 'Soil Health' dashboards.",
+    "All components must use standard HTML layout elements (div, section) styled with Tailwind inside Shadcn UI wrappers."
+  ]
+}
