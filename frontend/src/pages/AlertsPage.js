@@ -21,7 +21,7 @@ const AlertsPage = () => {
   const fetchAlerts = async () => {
     try {
       const response = await getAlerts();
-      setAlerts(response.data);
+      setAlerts(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.error('Failed to fetch alerts:', error);
     } finally {

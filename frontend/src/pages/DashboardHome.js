@@ -38,8 +38,8 @@ const DashboardHome = () => {
         ]);
         setStats(statsRes.data);
         setWeather(weatherRes.data);
-        setCrops(cropsRes.data);
-        setAlerts(alertsRes.data.slice(0, 5));
+        setCrops(Array.isArray(cropsRes.data) ? cropsRes.data : []);
+        setAlerts(Array.isArray(alertsRes.data) ? alertsRes.data.slice(0, 5) : []);
       } catch (error) {
         console.error('Failed to fetch dashboard data:', error);
       } finally {

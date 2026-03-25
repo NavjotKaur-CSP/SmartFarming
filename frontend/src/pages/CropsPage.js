@@ -38,7 +38,7 @@ const CropsPage = () => {
   const fetchCrops = async () => {
     try {
       const response = await getCrops();
-      setCrops(response.data);
+      setCrops(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.error('Failed to fetch crops:', error);
     } finally {
