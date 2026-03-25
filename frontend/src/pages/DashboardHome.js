@@ -25,6 +25,9 @@ const DashboardHome = () => {
   const [weather, setWeather] = useState(null);
   const [crops, setCrops] = useState([]);
   const [alerts, setAlerts] = useState([]);
+
+  const safeCrops = Array.isArray(crops) ? crops : [];
+  const safeAlerts = Array.isArray(alerts) ? alerts : [];
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -311,9 +314,9 @@ const DashboardHome = () => {
             </div>
           </CardHeader>
           <CardContent>
-            {crops.length > 0 ? (
+            {safeCrops.length > 0 ? (
               <div className="space-y-3">
-                {crops.slice(0, 4).map((crop) => (
+                {safeCrops.slice(0, 4).map((crop) => (
                   <div key={crop.id} className="flex items-center justify-between p-3 bg-[#FAFAFA] rounded-lg">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-[#2F5233]/10 rounded-lg flex items-center justify-center">
@@ -361,9 +364,9 @@ const DashboardHome = () => {
             </div>
           </CardHeader>
           <CardContent>
-            {alerts.length > 0 ? (
+            {safeAlerts.length > 0 ? (
               <div className="space-y-3">
-                {alerts.map((alert) => (
+                {safeAlerts.map((alert) => (
                   <div key={alert.id} className={`flex items-start gap-3 p-3 rounded-lg ${alert.is_read ? 'bg-[#FAFAFA]' : 'bg-[#FEF3C7]'}`}>
                     {alert.severity === 'danger' ? (
                       <AlertTriangle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
