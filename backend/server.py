@@ -8,7 +8,7 @@ import logging
 import sqlite3
 import uuid
 from pathlib import Path
-from pydantic import BaseModel, EmailStr, validator
+from pydantic import BaseModel, EmailStr
 from typing import Optional
 from datetime import datetime, timezone, timedelta
 import bcrypt
