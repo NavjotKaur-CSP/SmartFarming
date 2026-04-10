@@ -21,13 +21,22 @@ import {
   Globe,
   Save,
   Loader2,
-  CheckCircle2
+  CheckCircle2,
+  Camera
 } from 'lucide-react';
 
 const ProfilePage = () => {
   const { user, updateProfile } = useAuth();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [profilePic, setProfilePic] = useState(null);
+  const fileInputRef = React.useRef();
+
+  const handlePicChange = (e) => {
+    const file = e.target.files[0];
+    if (file) setProfilePic(URL.createObjectURL(file));
+  };
+
   const [formData, setFormData] = useState({
     name: user?.name || '',
     phone: user?.phone || '',
@@ -68,12 +77,22 @@ const ProfilePage = () => {
       <Card className="bg-white border-[#E7E5E4]">
         <CardHeader className="border-b border-[#E7E5E4]">
           <div className="flex items-center gap-4">
-            <Avatar className="w-20 h-20">
-              <AvatarImage src="https://images.pexels.com/photos/2519332/pexels-photo-2519332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-              <AvatarFallback className="bg-[#2F5233] text-white text-2xl">
-                {user?.name?.charAt(0) || 'U'}
-              </AvatarFallback>
-            </Avatar>
+            <div className="relative">
+              <Avatar className="w-20 h-20">
+                <AvatarImage src={profilePic || "https://images.pexels.com/photos/2519332/pexels-photo-2519332.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"} />
+                <AvatarFallback className="bg-[#2F5233] text-white text-2xl">
+                  {user?.name?.charAt(0) || 'U'}
+                </AvatarFallback>
+              </Avatar>
+              <button
+                type="button"
+                onClick={() => fileInputRef.current.click()}
+                className="absolute bottom-0 right-0 bg-[#2F5233] text-white rounded-full p-1 hover:bg-[#243E26]"
+              >
+                <Camera className="w-3 h-3" />
+              </button>
+              <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handlePicChange} />
+            </div>
             <div>
               <CardTitle className="text-xl font-semibold text-[#1C1917]">{user?.name}</CardTitle>
               <p className="text-[#78716C]">{user?.email}</p>
