@@ -60,58 +60,5 @@ yarn start
 
 The app will be available at `http://localhost:3000`.
 
----
-
-## Environment Variables
-
-### Backend `.env`
-```
-SECRET_KEY=your_jwt_secret
-OPENAI_API_KEY=your_openai_key
-MONGO_URL=your_mongodb_connection_string
 ```
 
-### Frontend `.env`
-```
-REACT_APP_BACKEND_URL=http://localhost:8000
-```
-
----
-
-## Project Structure
-
-```
-SmartFarming/
-├── backend/
-│   ├── server.py         # FastAPI app & all API routes
-│   └── requirements.txt
-├── frontend/
-│   ├── public/
-│   └── src/
-│       ├── components/   # Reusable UI components
-│       ├── context/      # Auth context
-│       ├── pages/        # All page components
-│       └── services/     # API service layer
-└── README.md
-```
-
----
-
-## Pages
-
-| Route | Description |
-|-------|-------------|
-| `/dashboard` | Main dashboard with stats and charts |
-| `/dashboard/crops` | Crop management (CRUD) |
-| `/dashboard/health` | AI crop health analysis |
-| `/dashboard/yield` | AI yield prediction |
-| `/dashboard/weather` | Weather & soil data |
-| `/dashboard/market` | Market prices |
-| `/dashboard/alerts` | Alerts & notifications |
-| `/dashboard/profile` | User profile settings |
-
----
-
-## License
-
-MIT
